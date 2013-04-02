@@ -1,0 +1,26 @@
+body { background: #F5F5F5;margin: 0px;padding: 0px}
+body, div { font-family: Verdana, Trebuchet MS, Arial;font-size: 11px;line-height: 170%}
+h1 { padding: 0px;margin: 0px;margin-top: 30px;margin-bottom: 12px;font-family: Trebuchet MS, Arial, Tahoma, Verdana;font-size: 18px}
+h2 { padding: 0px;margin: 0px;margin-top: 20px;margin-bottom: 6px;font-family: Trebuchet MS, Arial, Tahoma, Verdana;font-size: 14px;text-indent: 6px}
+a, a:link, a:visited { text-decoration: underline;color: #8590b7}
+a:hover { text-decoration: underline;color: #000}
+.Warnings { margin-top: 30px;padding: 8px;background: #c6d1fb;border-top: 1px solid #97D330;border-bottom: 1px solid #97D330}
+.Warnings, .Warnings div { color: #000000;font-size: 11px}
+.Warnings strong { display: block;font-size: 12px;padding-bottom: 4px}
+.Banner { padding: 20px}
+.Body { background: #fff;border-top: 2px solid #8590b7;border-bottom: 2px solid #8590b7;padding: 26px;padding-top: 0px}
+.Body p, .Body code { margin-left: 10px; text-align:justify}
+pre, code { background: #f5f5f5;border-left: 4px solid #ddd;padding: 8px}
+.Contents { max-width: 600px}
+ul ul { margin-bottom: 10px}
+.Form { background: #eee;padding: 20px;padding-top: 15px;padding-bottom: 15px}
+dl { margin: 0px;padding: 0px}
+dt { padding-top: 5px;position: absolute}
+dd { padding-left: 170px;padding-top: 5px;padding-bottom: 5px}
+.Form input { width: 200px}
+.Button a, .Button a:link, .Button a:visited, .Button a:hover { font-size: 16px;text-decoration: underline;font-family: Trebuchet MS, Arial, Tahoma, Verdana;font-weight: bold}
+.Button a, .Button a:link, .Button a:visited { color: orange}
+.Button a:hover { color: #97D330}         
+.Foot {padding: 10px;padding-left: 20px;color: #aaa;font-size: 11px}
+.Foot a, .Foot a:link, .Foot a:visited { color: #aaa;text-decoration: none}
+.Foot a:hover { color: #555;text-decoration: none}

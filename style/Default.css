@@ -1,0 +1,404 @@
+/*Crystal 2.2 PowerBB Theme*/
+/*Eli White <thesavior@cox.net>*/
+
+/*Space around the forum*/
+html {margin: 0;}
+/*Background Color of the forum*/
+body {background: #B7BCC3 url('../img/Default/bg.gif') repeat-x; margin: 25px 0px 15px 0px; padding: 0;}
+/*Width of the forum */
+#pw_bbwrap {width: 760px; margin: auto;}
+/*Main Boxes */
+div.box {background-color:#E8E8E8; border-color: #A1A1A1; border-style: solid; border-width: 1px;}
+/*Top boxes*/
+#brdwelcome{ background-image: url('../img/Default/infobg.gif'); background-repeat: repeat; }
+/*The board logo*/
+div.logo {width: 100%; background-color: #000000; background-repeat: repeat; border-top: 1px solid: #A1A1A1;}
+/*Link Styling*/
+.pw_bb A:link, .pw_bb A:visited {COLOR: #003366}
+.pw_bb A:hover {COLOR: #0066CC}
+/*Main Menu*/
+#brdmenu {background: #418DB7 url('../img/Default/linksbg.gif') repeat-x; border: 1px 0px 1px 0px solid #53656B; height: 11px; text-align: center;}
+#brdmenu A:link, #brdmenu A:active, #brdmenu A:visited, #brdmenu A:hover {color: #000000; font-weight: bold;}
+li.brdmenulinks:hover {background: url('../img/Default/linkshoverbg.gif') repeat-x;}
+/*Category Styling */
+.pw_bb H2 {BACKGROUND: url('../img/Default/categorybg.gif') repeat-x; COLOR:#FFFFFF; font-size: 11px; font-weight: bold; border: 0px 1px 0px 1px solid #A1A1A1; height: 15px; MARGIN: 0px 1px 0px 1px; PADDING: 0px;LIST-STYLE: none}
+/*Second main navigation*/
+#brdmenu2 {BACKGROUND: url(../img/Default/cat_center.jpg) repeat-x; font-weight: bold; border-top: 1px solid #53656B; height: 13px; text-align: center;}
+#brdmenu2 A:link, #brdmenu2 A:visited, #brdmenu2 a:hover {COLOR: #000000}
+li.brdmenu2links:hover {background: url('../img/Default/links2hoverbg.gif') repeat-x;}
+/*Borders in the table*/
+.pw_bb TD {border: 0px;}
+.pw_bb TH {BORDER: 0px;}
+/*In the forum table, the left box*/
+.tcl {TEXT-ALIGN: left; WIDTH: 50%;OVERFLOW: HIDDEN; border: none;}
+/*In the forum table, the two center boxes*/
+.tc2, .tc3, .tcmod {WIDTH: 9%; TEXT-ALIGN: center;}
+/*In the forum table, the right box*/
+.tcr {WIDTH: 32%; TEXT-ALIGN: left; OVERFLOW: HIDDEN; border:0px;}
+/*Forum Box*/
+#forum {border-top:0px;}
+/*copyright box*/
+span.skincopyright{text-align: center; margin: auto; padding: 10px; text-transform: capitalize;}
+/*Readonly Boxes*/
+.textboxread {font-family:Lucida Sans Unicode,Lucida Sans,Tahoma,Helvetica,Arial;color:#000000;padding:2px;background-color:#DBDBDB;border:2px solid #4A5916}
+
+/*Styles to apply to all images*/
+.pw_bb IMG {BORDER: none}
+/*Message to appear under the advert on your adbot.*/
+span.ads_message {text-align: left; font-weight: bold;}
+/*The right side of a post. Where the post actually appears*/
+div.rightpost {width:auto; padding: 15px; margin-right: 10px; float: left;}
+/*Styles the right column of statistics and footer links*/
+.conr {FLOAT: right;TEXT-ALIGN: right;CLEAR: right;WIDTH: 40%;}
+/*Styles the left column of statistics and footer links*/
+.conl {FLOAT: left;WIDTH: 55%;OVERFLOW: hidden;WHITE-SPACE: nowrap}
+.pw_bb TABLE {WIDTH: 100%; border: 0px;}
+/*Forum text color*/
+.pw_bb {COLOR: #030303; border: 0px;}
+/*Underneath category row, above the forum listings*/
+.pw_bb TH {background: url('../img/Default/tableheadbg.gif') repeat-x; border: 0px;}
+/*Codebox styling. for [code] [/code] bbcode*/
+DIV.codebox {BORDER-WIDTH: 0px;	border-left: 10px solid #ddd; padding: 8px; background: #ffffff url(../img/Default/code.png) no-repeat 0% 50%; background-position:top right; padding-left: 32px;}
+/*Quote styling. for [quote] [/quote] bbcode*/
+.pw_bb BLOCKQUOTE  {color: #6b7795; border: 0px; border-left: 10px solid #ddd; padding: 8px; background-color: #FFFFFF; padding-left: 32px; OVERFLOW: hidden; width:90%;}
+/*Post page, bold button*/
+.buttonb {background-image: url(../img/Default/b.gif); width:25px; height:25px; border:0px;}
+/*Post page, italics button*/
+.buttoni {background-image: url(../img/Default/i.gif); width:25px; height:25px; border:0px;}
+/*Post page, underline button*/
+.buttonu {background-image: url(../img/Default/u.gif); width:25px; height:25px; border:0px;}
+/*Post page, hyperlink button*/
+.buttonurl {background-image: url(../img/Default/url.gif); width:25px; height:25px; border:0px;}
+/*Post page, email button*/
+.buttonemail {background-image: url(../img/Default/mail.gif); width:25px; height:25px; border:0px;}
+/*Post page, image button*/
+.buttonimg {background-image: url(../img/Default/img.gif); width:25px; height:25px; border:0px;}
+/*Post page, code button*/
+.buttoncode {background-image: url(../img/Default/code.gif); width:25px; height:25px; border:0px;}
+/*Post page, quote button*/
+.buttonquote {background-image: url(../img/Default/quote.gif); width:25px; height:25px; border:0px;}
+/*Post page, smiley button*/
+.buttonsmiley {background-image: url(../img/Default/smile.gif); width:25px; height:25px; border:0px;}
+/*Post page, strikethrough button*/
+.buttons {background-image: url(../img/Default/s.gif); width:25px; height:25px; border:0px;}
+/*Post page, highlight button*/
+.buttonh {background-image: url(../img/Default/h.gif); width:25px; height:25px; border:0px;}
+/*Post page, align left button*/
+.buttonaleft {background-image: url(../img/Default/left.gif); width:25px; height:25px; border:0px;}
+/*Post page, align right button*/
+.buttonaright {background-image: url(../img/Default/right.gif); width:25px; height:25px; border:0px;}
+/*Post page, align center button*/
+.buttonacenter {background-image: url(../img/Default/center.gif); width:25px; height:25px; border:0px;}
+/*Post page, imageshack button*/
+.buttonis {background-image: url(../img/Default/is.gif); width:25px; height:25px; border:0px;}
+/*Main category styling, and board menu styling.*/
+.pw_bb H5 {BACKGROUND: url(../img/Default/cat_center.jpg) repeat-x; COLOR:#53656B; font-weight: bold;  height: 24px; }
+
+
+/*Main boxes background color*/
+.pw_bb BLOCKQUOTE, DIV.codebox, #adminconsole FIELDSET TH, .rowodd, .roweven {BACKGROUND-COLOR: #EEF2F7}
+
+/* New topic, new post, new reply, new poll buttons */
+.pw_bb p.postlink, #conr{ TEXT-ALIGN: CENTER; POSITION: RELATIVE; TOP : 0px; LEFT: 6px; BORDER: #A1A1A1 1PX SOLID; BACKGROUND-COLOR: #F1F1F1; BACKGROUND-IMAGE: url(../img/Default/button.png);}
+
+
+/*For basic styling, below styles can and should be left alone. Its for advance css coders mainly.*/
+.pw_bb TABLE, .pw_bb DIV, .pw_bb FORM, .pw_bb P, .pw_bb H1, .pw_bb H3, .pw_bb H4, .pw_bb PRE, .pw_bb BLOCKQUOTE, .pw_bb UL, .pw_bb OL, .pw_bb LI, .pw_bb DL,
+.pw_bb DT, .pw_bb DD, .pw_bb TH, .pw_bb TD, .pw_bb FIELDSET, .pw_bb IMG {MARGIN: 0px;PADDING: 0px;LIST-STYLE: none}
+#modtopicpreview {position:absolute;width:300px;border:1px solid gray;padding:2px;background-color:white;color:black;visibility:hidden;z-index:100}
+.pw_bb INPUT, .pw_bb SELECT, .pw_bb TEXTAREA, .pw_bb OPTGROUP {MARGIN: 0}
+.pw_bb .clearer, .pw_bb .clearb {CLEAR: both}
+.pw_bb .nosize {POSITION: absolute; LEFT: -10000px}
+DIV.blockpost DIV.box, DIV.postleft, DIV.postsignature, DIV.postmsg {OVERFLOW: hidden}
+DIV>DIV>DIV.postfootleft, DIV>DIV>DIV.postfootright {PADDING-TOP: 1px; MARGIN-TOP: -1px}
+/* Begin IEWin Fix \*/
+* HTML .inbox, * HTML .inform, * HTML .pw_bb, * HTML .intd, * HTML .tclcon {HEIGHT: 1px}
+* HTML .inbox DIV.postmsg {WIDTH: 98%}
+/* End of IEWin Fix */
+div.smiliecontainer1 {width: 100%; padding: 10px;}
+div.leftpost {width: 150px; padding: 15px; margin-left: 10px; float:left;}
+div.smilieheader {background: url('../img/Default/cat_center.jpg') #779412; background-repeat: repeat-x; height: 22px; color: #53656B; padding: 5px;  border-bottom: 1px solid #000000; font-size: medium; width: auto; margin: 0px; text-align: center; font-weight: bold;}
+div.smilies {padding: 5px; margin-top: 0px; background-color: #EEF2F7;}
+div.smiliecontainer2 {border: 1px solid #000000; width: 150px; margin-left: 10px; float:left;}
+#brdfooter H2, #brdstats .conl DT, #brdstats .conr DT, #modcontrols DT, #searchlinks DT, DIV.postright H3 {POSITION: absolute;DISPLAY: block;OVERFLOW: hidden;WIDTH: 1em;LEFT: -999em}
+LABEL.conl {WIDTH: auto;OVERFLOW: visible;MARGIN-RIGHT: 10px}
+DIV.linkst .conl, DIV.linksb .conl, DIV.postlinksb .conl {WIDTH:18em}
+DIV.linkst .conr, DIV.linksb .conr, DIV.postlinksb .conr {WIDTH:20em}
+FORM DIV.linksb .conr {WIDTH: 32em}
+.linkst UL, linksb UL, .postlinksb UL {MARGIN-LEFT: 18em}
+DIV.block2col {PADDING-BOTTOM: 1px}
+DIV.block2col DIV.blockform, DIV.block2col DIV.block, #viewprofile DD {MARGIN-LEFT: 14em}
+DIV.blockmenu, #viewprofile DT {FLOAT:left;WIDTH: 13em}
+#profileavatar IMG {FLOAT: right;MARGIN-LEFT: 1em}
+#viewprofile DL {FLOAT: left; WIDTH: 100%; OVERFLOW: hidden}
+#pw_bbindex TABLE, #vf TABLE {TABLE-LAYOUT: fixed}
+#pw_bbsearch #vf .tcl, #pw_bbmoderate #vf .tcl {WIDTH: 41%}
+#pw_bbsearch #vf .tc2 {WIDTH: 18%; TEXT-ALIGN: left}
+
+#users1 .tcl {WIDTH: 40%}
+#users1 .tcr {WIDTH: 25%}
+#users1 .tc2 {WIDTH: 25%; TEXT-ALIGN: left}
+#users1 .tc3 {WIDTH: 10%; TEXT-ALIGN: center}
+#debug .tcr {WIDTH: 85%; WHITE-SPACE: normal}
+#pw_bbindex TD.tcr SPAN.byuser {DISPLAY: inline}
+DIV.postleft, DIV.postfootleft {FLOAT:left;WIDTH: 18em;OVERFLOW: hidden}
+DIV.postright, DIV.postfootright {BORDER-LEFT-WIDTH: 18em;BORDER-LEFT-STYLE: solid}
+DIV.postfootright, P.multidelete {TEXT-ALIGN: right}
+DIV.blockpost>DIV>DIV.inbox {PADDING-BOTTOM: 1px}
+DIV.postmsg {WIDTH: 570px;}
+DIV.incqbox {WIDTH: 100%; OVERFLOW: hidden}
+DIV.scrollbox {WIDTH: 100%;OVERFLOW: auto}
+IMG.postimg {max-width: 100%}
+A .postimg {max-width: 100%}
+#postpreview DIV.postright {BORDER-LEFT: none}
+DIV.postsignature HR {MARGIN-LEFT: 0px;WIDTH: 200px;TEXT-ALIGN: left;HEIGHT: 1px;BORDER:none}
+DIV.searchposts DIV.postmsg {HEIGHT: 8em}
+DIV.searchposts DD P {PADDING-TOP: 3em}
+SPAN.bbu {TEXT-DECORATION: underline}
+#onlinelist DD, #onlinelist DT, #brdmenu LI, #brdmenu2 LI, DIV.linkst LI, DIV.linksb LI, DIV.postlinksb LI,DIV.postfootright LI, UL.bblinks LI {DISPLAY: inline}
+#posterror UL LI {LIST-STYLE: square inside}
+#viewprofile DT {TEXT-ALIGN: right}
+DIV.txtarea {WIDTH: 60%}
+DIV.txtarea TEXTAREA, INPUT.longinput {WIDTH: 100%; padding-right: 0px;}
+.pw_bb LABEL {DISPLAY: block}
+#qjump SELECT {WIDTH: 50%}
+#helpfile H2 {MARGIN-TOP: 12px}
+#helpfile DIV.box {PADDING: 10px}
+#pw_bbredirect DIV.block, #pw_bbmaint DIV.block {MARGIN: 50px 20% 12px 20%}
+INPUT.postselection {MARGIN-TOP: -5px;MARGIN-RIGHT: 5px}
+div#last {clear:both;margin:0px;border-bottom:1px solid #aaaaaa;border-left:1px solid #aaaaaa;background-color:#dddddd;padding:2px 2px 2px 5px;position:fixed;top:0px;right:0px}
+div#last a {text-decoration:none}
+div#last a:hover {text-decoration:none}
+#fecodearea TD INPUT, #fetextedit {font-family: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace}
+#fecodearea TD.fedelete { text-align:center }
+#fecodearea TD.feline { text-align: right }
+#saveeditmodelabel { display:inline }
+#femodlist { border:1px solid #888; padding:0; width:98% }
+DIV > #femodlist { width: auto }
+#femodlist LI A { display:block; width:100%; padding:3px 6px }
+#femodlist LI > A { width: auto; padding: 3px 6px }
+#femodlist LI.fenotwritable A { color:#BCBCBC }
+#femodlist LI.rowodd A { background: #fffcde }
+#femodlist LI.roweven A { background: #fff }
+#femodlist LI A:hover { background:#3A668B; color:#fff }
+#femodlist LI.fedirlist A { font-weight:bold; padding-right:0; padding-left:12px; background-image: url('../img/general/fe_bullet_dark.gif'); background-position: center left; background-repeat:no-repeat }
+#femodlist LI.fedirlist A:hover { background-image: url('../img/general/fe_bullet_light.gif'); background-position: center left; background-repeat:no-repeat }
+#felistlocation { background: #121212; color: #fff; padding: 3px 6px }
+LI#felistlocation { width:100% }
+#femodlist > LI#felistlocation { width: auto }
+LI#felistlocation A { display:inline; color:#fff }
+#fetextedit, #fecodearea { width:99%; overflow:auto; height:550px }
+DIV > #fetextedit, DIV > #fecodearea { width:100% }
+#fetable2, #fetextedit, #fecodearea { border:1px solid #ccc }
+.pw_bb #fetable TH, .pw_bb #fetable2 TH { padding: 3px 6px }
+.pw_bb #fetable TR TD, .pw_bb #fetextedit TR TD, .pw_bb #fetable TR TD INPUT.felineedit, .pw_bb #fetable2 TR TD { border:0; background: transparent; padding:0 }
+.pw_bb #fetable TH, .pw_bb #fecodearea TR TD.feline, .pw_bb #fetable2 TH { background: #d1d1d1; border:0 }
+#fetable TR.rowodd TD, #fetable2 TR.rowodd TD { background: #fffcde }
+#fetable TR.roweven TD, #fetable2 TR.roweven TD { background: #fff }
+#fetable2 TR.feidenticalcopy.rowodd TD, SPAN.rowodd.feidenticalcopy { background:#FFD6C8 }
+#fetable2 TR.feidenticalcopy.roweven TD, SPAN.roweven.feidenticalcopy { background:#FFCBB9 }
+UL#relnotes LI.relnote {list-style:square inside}
+#abslist DD, #abslist DT {display: inline;height: 0}
+#adminconsole TD, #adminconsole TH {BORDER-COLOR: #F1F1F1}
+TD.tcmod, #postpreview, #viewprofile DD, DIV.forminfo,
+#adminconsole FIELDSET TD, DIV.blockmenu DIV.box, #adstats DD {BACKGROUND-COLOR: #E8E8E8}
+.pw_bb LEGEND {COLOR: #547197}
+.pw_bb DIV.blockmenu LI.isactive A, #posterror LI STRONG {COLOR: #333}
+DIV.blockpost DIV.box, DIV.postright, DIV.postfootright {BACKGROUND-COLOR: #EEF2F7}
+DIV.postright, DIV.postfootright {border:none; padding: 6px;}
+DIV.postleft, DIV.blockpost LABEL {BACKGROUND-COLOR: #EEF2F7}
+div.postleft {border: 0px 1px 1px 0px solid #A1A1A1;}
+div.postfootright {background: #E3EEFB url('../img/Default/infobg.gif') repeat-x; margin-bottom: 0px; border-top: 1px solid #547197;}
+div.postfootleft {background-color: transparent; border-top: 1px solid #000000;}
+DIV.blockpost H2 {BACKGROUND-COLOR: #006FC9}
+DIV.blockpost H2 SPAN.conr {COLOR: #53656B}
+DIV.blockpost DIV.box {BORDER-COLOR: #006fC9 #A1A1A1 #A1A1A1}
+.pw_bb BLOCKQUOTE, DIV.codebox, DIV.forminfo, DIV.blockpost LABEL {BORDER-COLOR: #ACA899 #FFF #FFF #ACA899}
+.pw_bb DIV>FIELDSET {BORDER-COLOR: #ACA899}
+LI.postreport A:link, LI.postreport A:visited, TR.iclosed TD.tcl A:link, TR.iclosed TD.tcl A:visited {COLOR: #888}
+LI.postreport A:hover, TR.iclosed TD.tcl A:hover {COLOR: #AAA}
+LI.maintenancelink A:link, LI.maintenancelink A:visited {COLOR: #B42000}
+LI.maintenancelink A:hover {COLOR: #B42000}
+
+DIV.icon {FLOAT: left; width: 12px; height: 12px; MARGIN-TOP: 0.1em;MARGIN-LEFT: 0.2em;DISPLAY: block; border: 1px solid #000000;}
+
+TR.iclosed Div.icon {
+background-image : url(../img/Invision/f_closed.gif); 
+} 
+Div.icon {
+background-image: url('../img/Default/linksbg.gif'); background-repeat: repeat-x; 
+border-top: none;
+} 
+TR.iredirect Div.icon {
+background-image: url('../img/Default/linkshoverbg.gif');
+background-repeat: repeat-x;
+} 
+TR.inew Div.icon {
+background-image: url('../img/Default/linkshoverbg.gif');
+background-repeat: repeat-x;
+} 
+TR.isticky DIV.icon {
+background-image : url(../img/Invision/f_stiky.gif);
+}
+TR.istickynew DIV.icon {
+background-image : url(../img/Invision/f_stikynew.gif);
+}
+TR.imoved DIV.icon {
+background-image : url(../img/Invision/f_moved.gif);
+}
+
+
+#headercas1 {background: #4568A8 url('../img/Default/header_forums2.gif') no-repeat 0px 0px;margin-bottom: -1px}
+#headercas2 {background: transparent url('../img/Default/header_forums3.gif') no-repeat 100% 0px;height: 161px}
+A.top { border: 0;background-color: #e4eaf2;font-weight: bold;padding: 0 1px 0 2px}
+FORM.editarea {display: none;background-color: #eef2f7;border-top: 5px solid #cc0000;margin: 20px 20px 10px 10px;padding: 5px 10px 5px 10px;font-weight: bold}
+FORM.editarea textarea {background-color: #FFF;width: 100%;border: 1px solid #3c68a5;color: #000}
+FORM.editarea input {background-color: transparent;border: 0}
+FORM.editarea p {margin-left: 35px}
+FORM.editarea p input.eposter {color: #4aa94a;font-weight: bold}
+FORM.editarea p input.efermer {color: #CC0000;font-weight: bold;margin-left: 10px}
+FORM.editarea span {padding: 5px 0 15px 0;font-weight: 400}
+FORM.editarea a {text-decoration: underline}
+.calendar_no {background-color: #E6E3E4}
+.calendar_day{background-color: #E1EFFF}
+.pw_bb, .pw_bb INPUT, .pw_bb SELECT, .pw_bb TEXTAREA, .pw_bb OPTGROUP {FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+.pw_bb {FONT-SIZE: 10px; LINE-HEIGHT: normal}
+
+/* IEWin Font Size only - to allow IEWin to zoom. Do not remove comments \*/
+* HTML .pw_bb {FONT-SIZE: 62.5%}
+/* End IE Win Font Size */
+
+.pw_bb TABLE, .pw_bb INPUT, .pw_bb SELECT, .pw_bb OPTGROUP, .pw_bb TEXTAREA, DIV.postmsg P.postedit {FONT-SIZE: 1em}
+.pw_bb PRE {FONT-FAMILY: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace}
+.pw_bb H4 {FONT-SIZE: 1em}
+.pw_bb H3 {FONT-SIZE: 1.2em}
+#brdtitle H1 {FONT-SIZE: 1.4em}
+DIV.postmsg P {LINE-HEIGHT: 1.4}
+DIV.postleft DT {FONT-SIZE: 1.1em}
+.pw_bb PRE {FONT-SIZE: 1.2em}
+DIV.postleft DT, DIV.postmsg H4, TD.tcl H3, DIV.forminfo H3, P.postlink, DIV.linkst LI,
+DIV.linksb LI, DIV.postlinksb LI, .blockmenu LI, #brdtitle H1, .pw_bb SPAN.warntext, .pw_bb P.warntext {FONT-WEIGHT: bold}
+#brdmenu A:link, #brdmenu A:visited, .blockpost DT A:link, .blockpost DT A:visited, .blockpost H2 A:link,
+.blockpost H2 A:visited, .postlink A:link, .postlink A:visited, .postfootright A:link, .postfootright A:visited,
+.blockmenu A:link, .blockmenu A:visited {TEXT-DECORATION: none}
+.blockpost H2 A:hover {TEXT-DECORATION: underline}
+A:active {TEXT-DECORATION: none}
+A:visited {TEXT-DECORATION: none}
+A:link {TEXT-DECORATION: none}
+A:hover {TEXT-DECORATION: none}
+.pw_bb TD, .pw_bb TH, .pw_bb BLOCKQUOTE, DIV.codebox, DIV.forminfo, DIV.blockpost LABEL {BORDER-STYLE: solid;}
+.pw_bb TD, .pw_bb TH {BORDER-BOTTOM: none;BORDER-RIGHT: none}
+
+DIV>FIELDSET {BORDER-STYLE: solid;BORDER-WIDTH: 1px}
+DIV.blocktable, DIV.block, DIV.blockform, DIV.block2col, #postreview {MARGIN-BOTTOM: 12px}
+#pw_bbindex DIV.blocktable, DIV.blockpost {MARGIN-BOTTOM: 6px}
+DIV.block2col DIV.blockform, DIV.block2col DIV.block {MARGIN-BOTTOM: 0px}
+DIV.linkst, DIV.linksb {MARGIN-TOP: -12px}
+DIV.postlinksb {MARGIN-TOP: -6px}
+#brdstats {MARGIN-TOP: 12px}
+DIV.block DIV.inbox, DIV.blockmenu DIV.inbox {PADDING: 3px 6px}
+.pw_bb P, .pw_bb DL, DIV.blockmenu LI, .pw_bb LABEL, #announce DIV.inbox DIV {PADDING: 3px 0}
+.pw_bb H2 {PADDING: 4px 6px}
+.pw_bb H1 {PADDING: 3px 0px 0px 0}
+#brdtitle P {PADDING-TOP: 0px}
+DIV.linkst {PADDING: 8px 6px 3px 6px}
+DIV.linksb, DIV.postlinksb {PADDING: 3px 6px 8px 6px}
+div.blockmenu {clear:both;}
+#brdwelcome, #brdfooter DL A, DIV.blockmenu LI, DIV.rbox INPUT  {LINE-HEIGHT: 1.4em}
+#viewprofile DT, #viewprofile DD {PADDING: 0 3px; LINE-HEIGHT: 2em}
+#brdmenu LI, #brdmenu2 LI, DIV.rbox INPUT, DIV.blockform P INPUT  {MARGIN-RIGHT: 12px}
+.pw_bb TH, .pw_bb TD {PADDING: 4px 6px}
+.pw_bb TD P {PADDING: 5px 0 0 0}
+DIV.postleft DL, DIV.postright {PADDING: 6px}
+DD.usercontacts, DD.postavatar {MARGIN-TOP: 5px}
+DD.postavatar {MARGIN-BOTTOM: 5px}
+DIV.postsignature, DIV.postmsg P.postedit {PADDING-TOP: 15px}
+DIV.postmsg H4 {MARGIN-BOTTOM: 10px}
+.pw_bb BLOCKQUOTE, DIV.codebox {MARGIN: 5px 15px 15px 15px; PADDING: 8px}
+DIV.postfootleft P, DIV.postfootright UL, DIV.postfootright DIV {PADDING: 10px 6px 5px 6px}
+DIV.blockpost INPUT, DIV.blockpost LABEL {PADDING: 3px;DISPLAY: inline}
+P.multidelete {PADDING-TOP: 15px;PADDING-BOTTOM: 5px}
+DIV.postmsg P {PADDING: 0}
+DIV.blockform FORM, DIV.fakeform {PADDING: 20px 20px 15px 20px}
+DIV.inform {PADDING-BOTTOM: 12px}
+.pw_bb FIELDSET {PADDING: 0px 12px 0px 12px}
+DIV.infldset {PADDING: 9px 10px 12px 0px; width: 100%;}
+.pw_bb LEGEND {PADDING: 0px 6px}
+DIV.forminfo {MARGIN-BOTTOM: 12px;PADDING: 9px 10px}
+UL.bblinks LI {PADDING-RIGHT: 20px}
+UL.bblinks {PADDING-BOTTOM: 10px; PADDING-LEFT: 4px}
+DIV.blockform P INPUT {MARGIN-LEFT: 12px}
+DIV.searchposts DIV.icon {MARGIN-LEFT: 0}
+TD DIV.tclcon {MARGIN-LEFT: 2.3em}
+.userpm {background: url(../img/Default/f_msg.gif) no-repeat 0 0;font-weight: bold;padding-left: 22px;padding-top: 1px;height: 15px}
+IMG.iconetat {FLOAT: left;MARGIN-TOP: 0.1em;MARGIN-LEFT: 0.5em;MARGIN-RIGHT: 0.5em;DISPLAY: block;BORDER-WIDTH: 0}
+input {font-family:Lucida Sans Unicode,Lucida Sans,Tahoma,Helvetica,Arial;color:#000000;padding:2px;background-color:#FFFFFF;border:2px solid #4A5916}
+textarea {cursor:default;overflow:auto; border:2px solid #4A5916; padding:5px; font-family:Lucida Sans Unicode; font-size:10px;color:#656B78}
+select {font-size:10px;font-family:Lucida Sans Unicode,Lucida Sans,Tahoma,Helvetica,Arial;color:#000000;padding:2px;background-color:#FFFFFF;border:2px solid #4A5916}
+.calendar_no {background-color: #E6E3E3}
+.calendar_day{background-color: #FFFFFF}
+#adminconsole .block2 {MARGIN-TOP: 12px}
+* HTML #adstats DD {HEIGHT: 1%}
+#adstats DD {MARGIN-LEFT: 14em; PADDING: 3px; MARGIN-BOTTOM: 5px; LINE-HEIGHT: 1.5em}
+#adstats DT {FLOAT:left; WIDTH: 13em; PADDING: 3px; line-height: 1.5em}
+#adstats {PADDING: 15px 15px 5px 10px}
+#adintro {PADDING: 5px}
+#adintro P {PADDING: 10px}
+#adstats DL {PADDING: 5px 0 10px 5px}
+#adminconsole FIELDSET TD {TEXT-ALIGN: left;PADDING: 4px;WHITE-SPACE: normal}
+#adminconsole FIELDSET TH {TEXT-ALIGN: left;PADDING: 4px;WHITE-SPACE: normal}
+#adminconsole FIELDSET TD SPAN, #adminconsole FIELDSET TH SPAN {DISPLAY: block; FONT-SIZE: 1em; FONT-WEIGHT: normal}
+#adminconsole TH {WIDTH: 15em; FONT-WEIGHT: bold}
+#adminconsole INPUT, #adminconsole SELECT, #adminconsole TEXTAREA {MARGIN-BOTTOM: 0; MARGIN-TOP: 0; FONT-WEIGHT: normal}
+#adminconsole TABLE.aligntop TH, #adminconsole TABLE.aligntop TD {VERTICAL-ALIGN: top}
+#adminconsole TABLE.aligntop TH {PADDING-TOP: 0.7em}
+#adminconsole TD, #adminconsole TH {BORDER-STYLE: solid; BORDER-WIDTH: 0px 0px 0px 0px}
+#adminconsole P {PADDING-BOTTOM: 6px}
+#adminconsole .topspace {PADDING-TOP: 6px}
+#adminconsole P.submittop, #adminconsole P.submitend {TEXT-ALIGN: center}
+#adminconsole TH.hidehead {COLOR: #f1f1f1}
+#adminconsole THEAD TH {PADDING-BOTTOM: 0px}
+#adminconsole P.linkactions {FONT-WEIGHT: bold; PADDING-LEFT: 5px}
+#adminconsole TH INPUT, #adminconsole DIV.fsetsubmit {MARGIN-TOP: 6px}
+#categoryedit .tcl {WIDTH: 25%}
+#censoring .tcl, #censoring .tc2, #ranks .tcl, #ranks .tc2 {WIDTH: 20%}
+TABLE#forumperms TH, TABLE#forumperms TD {WHITE-SPACE: normal; WIDTH: auto; TEXT-ALIGN: center}
+TABLE#forumperms .atcl {TEXT-ALIGN: left; WIDTH: 15em; WHITE-SPACE: nowrap}
+#adminconsole TD.nodefault {BACKGROUND-COLOR: #D59B9B}
+#users2 TH, #users2 TH {TEXT-ALIGN: left}
+#users2 .tcl, #users2 .tc3, #users2 .tc5 {WIDTH: 15%; TEXT-ALIGN: left}
+#users2 .tc2 {WIDTH: 22%; TEXT-ALIGN: left}
+#users2 .tc4 {WIDTH: 8%}
+#users2 .tc4 {TEXT-ALIGN: center}
+#users2 .tcr {WHITE-SPACE: nowrap}
+#adminconsole #linkst, #adminconsole #linksb A {FONT-WEIGHT: bold}
+input.button_edit   {height:24px;width:24px;background-image: url(../../img/admin/edit.png);font-family:Helvetica,Arial;font-weight:bold;padding:0px;border:0px}
+input.button_delete {height:24px;width:24px;background-image: url(../../img/admin/trash.png);font-family:Helvetica,Arial;font-weight:bold;padding:0px;border:0px}
+.dynamic-tab-pane-control.tab-pane {position: relative;width:100%}
+.dynamic-tab-pane-control .tab-row .tab {width: 70px;height: 16px;position: relative;top: 0;display: inline;float: left;overflow: hidden;cursor: hand;margin: 1px -1px 1px 2px;padding: 2px 0px 0px 0px;border: 0px solid #000000;z-index: 1;font: 11px Tahoma, Helvetica, sans-serif;white-space: nowrap;text-align: center; background-image:url( "../img/admin/tab.png" ); font-size: normal; font-weight: normal;}
+.dynamic-tab-pane-control .tab-row .tab.selected {width: 74px !important;height: 18px !important;background-image:url( "../img/admin/tab_active.png" );background-repeat: no-repeat;border-bottom-width:0;z-index: 3;padding:2px 0px 0px 0px;margin: 1px -3px -3px 0px;top: -2px;font: 11px Tahoma, Helvetica, sans-serif}
+.dynamic-tab-pane-control .tab-row .tab a { font:11px Tahoma, Helvetica, sans-serif;color: #000000;text-decoration: none;cursor: hand}
+.dynamic-tab-pane-control .tab-row .tab.hover { color:#666666;font:11px Tahoma, Helvetica, sans-serif;width: 70px;height: 16px;background-image:url( "../img/admin/tab_hover.png" );background-repeat: no-repeat}
+.dynamic-tab-pane-control .tab-page { border: 1px solid rgb( 145, 155, 156 );background: rgb( 252, 252, 254 );z-index: 2;position: relative;top: -2px;font: 11px Tahoma, Helvetica, sans-serif;color: #000000;padding:5px;width: 97%;float: left}
+.dynamic-tab-pane-control .tab-row { z-index: 1;white-space: nowrap}
+.statshead {background-color: #E5E5E5; width: 100%; font-size: medium; text-align: left;}
+#footer .inbox {text-align: center; padding: 10px;}
+div.copy {padding: 5px; text-align: center; width: 100%;}
+div.inbox .span {text-align: center;}
+
+/*syntax highlighter*/
+.syn_code {direction: ltr}
+.syn_keyword {color: #0000bb;font-weight: bold}
+.syn_identifier {color: #0000bb;font-weight: normal}
+.syn_number {color: #c24545;font-weight: bold}
+.syn_string {color: #c24545;font-weight: bold}
+.syn_string2 {color: #c24545;font-weight: bold}
+.syn_symbol {color: #c24545;font-weight: bold}
+.syn_number {color: #c24545;font-weight: bold}
+.syn_object {color: #c24545;font-weight: bold}
+.syn_comment1 {color: #008000;font-weight: bold}
+.syn_comment2 {color: #008000;font-weight: bold}
+.syn_comment3 {color: #008000;font-weight: bold}
+.syn_directive {color: #800000;font-weight: bold}
+.syn_variable {color: #000090;font-weight: normal}
+.syn_value {color: #000090;font-weight: normal}

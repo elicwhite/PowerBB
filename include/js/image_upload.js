@@ -1,0 +1,1 @@
+function UpdateUploadSlots(){var html = '';var slot_count = document.forms[0].upload_slots.value;var i = 0;for (i = 0; i < slot_count; i++) html += "\t\t\t\t\t\t\t\t<p><input type='file' name='image_upload[]' size='70' /></p>\n";document.getElementById("image_upload").innerHTML = html;}function ClearUploadSlots(){document.getElementById("image_upload").innerHTML = '';}

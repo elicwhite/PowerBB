@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule ^f([0-9]+)(.*).html$ view_forum.php?id=$1 [L]
+RewriteRule ^t([0-9]+)(.*).html$ view_topic.php?id=$1 [L]
+RewriteRule ^p([0-9]+)(.*).html$ view_topic.php?pid=$1 [L]
+RewriteRule ^l([0-9]+)(.*).html$ view_poll.php?pid=$1 [L]
+RewriteRule ^(.*).rss$ extern.php?action=$1&type=rss [L]
+RewriteRule ^blabla.html$ index.php [L]

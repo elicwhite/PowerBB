@@ -1,0 +1,27 @@
+<?php
+define('FORUM_ROOT', '../../');
+require FORUM_ROOT.'include/common.php';
+require FORUM_ROOT.'lang/'.$forum_user['language'].'/index.php';
+$result = $db->query('SELECT COUNT(id)-1 FROM '.$db->prefix.'users') or error('Unable to fetch total user count', __FILE__, __LINE__, $db->error());
+$stats['total_users'] = $db->result($result);
+$result = $db->query('SELECT username FROM '.$db->prefix.'users ORDER BY registered DESC LIMIT 1') or error('Unable to fetch newest registered user', __FILE__, __LINE__, $db->error());
+$stats['last_user'] = $db->result($result);
+$result = $db->query('SELECT SUM(num_topics), SUM(num_posts) FROM '.$db->prefix.'forums') or error('Unable to fetch topic/post count', __FILE__, __LINE__, $db->error());
+list($stats['total_topics'], $stats['total_posts']) = $db->fetch_row($result);
+header("Content-type: image/png");
+$im = @imagecreate(472, 62) or die("Cannot Initialize new GD image stream");
+$image = imagecreatefrompng("../../img/general/sign.png");
+$text_color2 = imagecolorallocate($image, 120, 146, 29);
+$text_color3 = imagecolorallocate($image, 98, 120, 20);
+$text_color4 = imagecolorallocate($image, 78, 97, 12);
+$text_color = imagecolorallocate($image, 165, 188, 86);
+$text_left = imagecolorallocate($image, 229, 234, 214);
+$shado_color = imagecolorallocate($image, 178,178,178);
+imagestring($image, 2, 10, 45, convert_htmlspecialchars($configuration['o_board_name']), $text_left);
+imagestring($image, 10, 160, 5,  "Total Members : $stats[total_users]", $text_color);
+imagestring($image, 10, 160, 17,  "Total Topics  : $stats[total_topics]", $text_color2);
+imagestring($image, 10, 160, 29,  "Total Posts   : $stats[total_posts]", $text_color3);
+imagestring($image, 10, 160, 41,  "Newest Member : $stats[last_user]", $text_color4);
+imagepng($image);
+imagedestroy($image);
+?>

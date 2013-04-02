@@ -1,0 +1,143 @@
+<?php
+//----------------------------------------------
+// PowerBB
+//----------------------------------------------
+// All code is copyright to Power Software
+// unless mentioned otherwise. This code
+// may NOT be reproduced, or distributed
+// by any means, unless you have explicit
+// written permission from Power Software.
+// Some code is derived from early versions
+// of PunBB.
+//-----------------------------------------------
+// Copyright as of 2006
+// All rights reserved
+//-----------------------------------------------
+
+define('FORUM_ROOT', './');
+require FORUM_ROOT.'include/common.php';
+require FORUM_ROOT.'lang/'.$forum_user['language'].'/userlist.php';
+require FORUM_ROOT.'lang/'.$forum_user['language'].'/search.php';
+require FORUM_ROOT.'lang/'.$forum_user['language'].'/profile.php';
+if ($forum_user['g_read_board'] == '0' || $forum_user['g_view_users'] == '0') message($lang_common['No view']);
+$show_post_count = ($configuration['o_show_post_count'] == '1' || $forum_user['g_id'] < USER_GUEST) ? true : false;
+$username = (isset($_GET['username']) && $forum_user['g_search_users'] == '1') ? $_GET['username'] : '';
+$show_group = (!isset($_GET['show_group']) || intval($_GET['show_group']) < -1 && intval($_GET['show_group']) > 2) ? -1 : intval($_GET['show_group']);
+$sort_by = (!isset($_GET['sort_by']) || $_GET['sort_by'] != 'username' && $_GET['sort_by'] != 'registered' && ($_GET['sort_by'] != 'num_posts' || !$show_post_count)) ? 'username' : $_GET['sort_by'];
+$sort_dir = (!isset($_GET['sort_dir']) || $_GET['sort_dir'] != 'ASC' && $_GET['sort_dir'] != 'DESC') ? 'ASC' : strtoupper($_GET['sort_dir']);
+$page_title = convert_htmlspecialchars($configuration['o_board_name'])." (Powered By PowerBB Forums)".' / '.$lang_common['User list'];
+if ($forum_user['g_search_users'] == '1') $focus_element = array('userlist', 'username');
+define('ALLOW_INDEX', 1);
+require FORUM_ROOT.'header.php';
+?>
+<div class="blockform">
+	<h2><span><?php echo $lang_search['User search'] ?></span></h2>
+	<div class="box">
+	<form id="userlist" method="get" action="userlist.php">
+		<div class="inform">
+			<fieldset>
+				<legend><?php echo $lang_ul['User find legend'] ?></legend>
+				<div class="infldset">
+<?php if ($forum_user['g_search_users'] == '1'): ?>					<label class="conl"><?php echo $lang_common['Username'] ?><br /><input type="text" class="textbox" name="username" value="<?php echo convert_htmlspecialchars($username) ?>" size="25" maxlength="25" /><br /></label>
+<?php endif; ?>			<label class="conl"><?php echo $lang_ul['User group']."\n" ?>
+					<br /><select name="show_group">
+					<option value="-1"<?php if ($show_group == -1) echo ' selected="selected"' ?>><?php echo $lang_ul['All users'] ?></option>
+<?php
+	$result = $db->query('SELECT g_id, g_title FROM '.$db->prefix.'groups WHERE g_id!='.USER_GUEST.' ORDER BY g_id') or error('Unable to fetch user group list', __FILE__, __LINE__, $db->error());
+	while ($cur_group = $db->fetch_assoc($result))
+	{
+		if ($cur_group['g_id'] == $show_group) echo "\t\t\t\t\t\t".'<option value="'.$cur_group['g_id'].'" selected="selected">'.convert_htmlspecialchars($cur_group['g_title']).'</option>'."\n";
+		else echo "\t\t\t\t\t\t".'<option value="'.$cur_group['g_id'].'">'.convert_htmlspecialchars($cur_group['g_title']).'</option>'."\n";
+	}
+?>
+					</select>
+					<br /></label>
+					<label class="conl"><?php echo $lang_search['Sort by']."\n" ?>
+					<br /><select name="sort_by">
+						<option value="username"<?php if ($sort_by == 'username') echo ' selected="selected"' ?>><?php echo $lang_common['Username'] ?></option>
+						<option value="registered"<?php if ($sort_by == 'registered') echo ' selected="selected"' ?>><?php echo $lang_common['Registered'] ?></option>
+<?php if ($show_post_count): ?>						<option value="num_posts"<?php if ($sort_by == 'num_posts') echo ' selected="selected"' ?>><?php echo $lang_ul['No of posts'] ?></option>
+<?php endif; ?>					</select>
+					<br /></label>
+					<label class="conl"><?php echo $lang_search['Sort order']."\n" ?>
+					<br /><select name="sort_dir">
+						<option value="ASC"<?php if ($sort_dir == 'ASC') echo ' selected="selected"' ?>><?php echo $lang_search['Ascending'] ?></option>
+						<option value="DESC"<?php if ($sort_dir == 'DESC') echo ' selected="selected"' ?>><?php echo $lang_search['Descending'] ?></option>
+					</select>
+					<br /></label>
+					<p class="clearb"><?php echo $lang_ul['User search info'] ?></p>
+				</div>
+			</fieldset>
+		</div>
+		<p><input type="submit" class="b1" name="search" value="<?php echo $lang_common['Submit'] ?>" accesskey="s" /></p>
+	</form>
+	</div>
+</div>
+<?php
+$where_sql = array();
+$like_command = ($db_type == 'pgsql') ? 'ILIKE' : 'LIKE';
+if ($forum_user['g_search_users'] == '1' && $username != '') $where_sql[] = 'u.username '.$like_command.' \''.$db->escape(str_replace('*', '%', $username)).'\'';
+if ($show_group > -1) $where_sql[] = 'u.group_id='.$show_group;
+$result = $db->query('SELECT COUNT(id) FROM '.$db->prefix.'users AS u'.(!empty($where_sql) ? ' WHERE u.id>1 AND '.implode(' AND ', $where_sql) : '')) or error('Unable to fetch user list count', __FILE__, __LINE__, $db->error());
+$num_users = $db->result($result);
+$num_pages = ceil($num_users / 20);
+$p = (!isset($_GET['p']) || $_GET['p'] <= 1 || $_GET['p'] > $num_pages) ? 1 : $_GET['p'];
+$start_from = 20 * ($p - 1);
+$paging_links = $lang_common['Pages'].': '.paginate($num_pages, $p, 'userlist.php?username='.urlencode($username).'&amp;show_group='.$show_group.'&amp;sort_by='.$sort_by.'&amp;sort_dir='.strtoupper($sort_dir));
+?>
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink"><?php echo $paging_links ?></p>
+	</div>
+</div>
+<div id="users1" class="blocktable">
+	<h2><span><?php echo $lang_common['User list'] ?></span></h2>
+	<div class="box">
+		<div class="inbox">
+		<table cellspacing="0">
+		<thead>
+			<tr>
+				<th class="tcl" scope="col"><?php echo $lang_common['Username'] ?></th>
+				<th class="tcr" scope="col">Display Name</th>
+				<th class="tc2" scope="col"><?php echo $lang_common['Title'] ?></th>
+<?php if ($show_post_count): ?>				<th class="tc3" scope="col"><?php echo $lang_common['Posts'] ?></th>
+<?php endif; ?>				<th class="tcr" scope="col"><?php echo $lang_common['Registered'] ?></th>
+<th class="tcr" scope="col"><?php echo "PM"; ?></th>
+			</tr>
+		</thead>
+		<tbody>
+<?php
+$result = $db->query('SELECT u.id, u.username, u.displayname, u.title, u.num_posts, u.registered, u.country, u.group_id, g.g_id, g.g_user_title, g.g_color FROM '.$db->prefix.'users AS u LEFT JOIN '.$db->prefix.'groups AS g ON g.g_id=u.group_id WHERE u.id>1'.(!empty($where_sql) ? ' AND '.implode(' AND ', $where_sql) : '').' ORDER BY '.$sort_by.' '.$sort_dir.' LIMIT '.$start_from.', 50') or error('Unable to fetch user list', __FILE__, __LINE__, $db->error()); 
+if ($db->num_rows($result))
+{
+	while ($user_data = $db->fetch_assoc($result))
+	{
+		$user_title_field = get_title($user_data);
+		if ($user_data['group_id'] == '32000') $user_title_field = ' <font color="red">(Not activated)</font>';
+    		$user_country = $user_data['country'];
+?>
+				<tr>
+					<td class="tcl"><?php echo '<a href="profile.php?id='.$user_data['id'].'"><span style="color:'.$user_data['g_color'].'">'.convert_htmlspecialchars($user_data['username']).'</span></a>' ?></td>
+					<td class="tcr"><?php echo '<span style="color:'.$user_data['g_color'].'">'.convert_htmlspecialchars($user_data['displayname']).'</span>' ?></td>
+					<td class="tc2"><?php echo $user_title_field ?></td>
+<?php if ($show_post_count): ?>					<td class="tc3"><?php echo $user_data['num_posts'] ?></td>
+<?php endif; ?>
+					<td class="tcr"><?php echo format_time($user_data['registered'], true) ?></td>
+					<td class="tcr"><?php echo '<a href="message_send.php?id='.$user_data['id'].'">PM</a>';?></td>
+				</tr>
+<?php
+	}
+}
+else echo "\t\t\t".'<tr>'."\n\t\t\t\t\t".'<td class="tcl" colspan="'.(($show_post_count) ? 4 : 3).'">'.$lang_search['No hits'].'</td></tr>'."\n";
+?>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="linksb">
+	<div class="inbox">
+		<p class="pagelink"><?php echo $paging_links ?></p>
+	</div>
+</div>
+<?php require FORUM_ROOT.'footer.php'; ?>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-ca">
+<head>
+	<title>PowerBB Forum - Read Me</title>
+	<link rel="stylesheet" type="text/css" href="../include/css/install.css" />
+</head>
+<body>
+<div class="Banner">
+	<img src="../img/logo.png" border="0" alt="PowerBB Forum" />
+</div>
+<div class="Body">
+	<div class="Contents">
+		<div class="Warnings">
+			<strong>Warning</strong>
+			<p>By accepting, downloading, and/or installing this product, you indemnify and hold harmless PowerBB software and it's creator Eli White. You accept that this product may contain harmful or damaging code.</p>
+		</div>
+            <h1>Upgrading Your Existing Installation</h1>
+            <p>If you have an existing installation of PowerBB Forum, <a href="upgrade.html">upgrade instructions can be found here</a>, otherwise continue reading for fresh-install instructions.</p>
+            <h1>Automated Installation</h1>
+            <h2>Installer</h2>
+            <p>An installer is available. If you are viewing this file through your web server (ie. not through your filesystem), <a href="../install/index.php">you can access the installer here</a>.</p>
+            <p>If you would rather do a manual installation, follow the instructions below.</p>
+            <h1>Manual Installation</h1>
+            <h2>Database</h2>
+            <p>Contained in the install directory of this application is a PowerBB.sql file. You can use an existing database (if you have one), or you can create a new database named whatever you like. You can install this database using the following command:</p>
+            <blockquote>
+               <code>mysql -u your_database_username -p your_database_name < PowerBB.sql</code>
+            </blockquote>
+            <p>The database is an empty shell, containing a single administrative user in the system with the username "Admin" and the password "Admin". You MUST change the base URL, the maser E-Mail address before using your forum.</p>
+            <h2>Files</h2>
+            <p>Place the application files where you want the forum to appear on your system. Then follow the following instructions:</p>
+            <ol>
+               <li>Open the config.php file</li>
+               <li>On line 3, specify the type of the database (db_type).</li>
+               <li>On line 4, specify the host name of your database (db_host).</li>
+               <li>On line 5, specify the name of your database (db_name).</li>
+               <li>On line 6, specify the username of the user with access to your database (db_username).</li>
+               <li>On line 7, specify the password of the user with access to your database (db_password).</li>
+               <li>On line 8, specify the prefix of tables in the PowerBB database (you do not need to change this) (db_prefix).</li>
+               <li>On line 12, specify the domain to which you would like to have PowerBB cookies assigned (cookie_domain).</li>
+            </ol>
+            <p>PowerBB Forum is going to need read AND write access to the following file:</p>
+            <ul>
+               <li>config.php</li>
+            </ul>
+            <p>PowerBB Forum is also going to need read AND write access to the following folders:</p>
+            <ul>
+               <li>backup/</li>
+               <li>cache/</li>
+               <li>img/</li>
+               <li>img/avatars/</li>
+               <li>include/user/</li>
+               <li>include/template/</li>
+               <li>style/</li>
+               <li>uploads/</li>
+            </ul>
+            <p>If you are running a *nix server and you have command line access, you can achieve these permissions by navigating to the PowerBB folder. Once you are sitting in the root PowerBB folder, run the following commands:</p>
+            <blockquote>
+               <pre>chmod 755 backup/
+chmod 755 cache/
+chmod 755 img/
+chmod 755 img/avatars/
+chmod 755 include/user/
+chmod 755 include/template/
+chmod 755 style/
+chmod 755 uploads/
+</pre>
+            </blockquote>
+            <p>If you've followed the instructions, you should be able to <a href="../index.php">view your forum</a>.</p>
+            <h1>Reporting Bugs</h1>
+		<h2>Please READ and FOLLOW these guidelines when reporting bugs</h2>
+		<ul>
+			<li><strong>Check and ask at http://www.powerwd.com/forum/</strong> for fixes to your problems before emailing in bug reports.</li>
+			<li><strong>Email bugs</strong> to thesavior [at] cox [dot] net.</li>
+			<li>
+			<strong>Document your bugs</strong>. Good documentation includes:
+			<ul>
+				<li>Your system configuration: operating system &amp; version, web server &amp; version, mysql version, php version, etc.</li>
+				<li>Any urls you were accessing when you encountered errors (DO NOT report a page name. Give a proper url).</li>
+				<li>If you encountered the error when submitting a form of some kind, tell us exactly what you had put in every single input on the form.</li>
+				<li>Screen captures of bugs can often help to rectify the problem very quickly.</li>
+			</ul>
+			</li>
+            </ul>
+		<p>The bottom line is: When it comes to debugging, the more you can provide, the easier it will be to duplicate and rectify the problem.</p>
+	</div>
+</div>
+<div class="Foot">
+	<a href="http://www.powerwd.com/index.php"><b>Eli White</b></a> <a href="http://www.powerwd.com/PowerBB/index.php">PowerBB Forums</a> Copyright &copy; 2005 - 2006
+</div>
+</body>
+</html>
